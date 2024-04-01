@@ -1,0 +1,38 @@
+.goback {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.love {
+  text-align: center;
+}
+
+.openTimer {
+  width: 200px;
+}
+
+.hiddenTimer {
+  display: none;
+}
+
+.timer {
+  font-size: 5rem;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+  border: solid pink 5px;
+  background-color: pink;
+}
+
+.loveTimer {
+  width: 30rem;
+  height: 3rem;
+  border: none;
+  background-color: hotpink;
+}
