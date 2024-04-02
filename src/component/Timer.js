@@ -1,22 +1,43 @@
 import { useState } from "react";
 import styles from "./Timer.module.css";
 
-const Timer = () => {
+function Timer() {
   const [time, setTime] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
-  const [loveyou, setLoveyou] = useState(false);
+  const [musicPlay, setMusicPlay] = useState(false);
+  const [selectedSong, setSelectedSong] = useState(null);
 
-  const wantToSeeYou = () => {
-    if (!loveyou) {
-      setLoveyou(true);
+  const songs = [
+    {
+      name: "요즘 자주 듣는 노래 1",
+      url: "https://youtu.be/xg_Y7Or_hWM?si=KtDL4aJUsBOC78bK",
+      time: 5,
+    },
+    {
+      name: "요즘 자주 듣는 노래 2",
+      url: "https://youtu.be/Vc_kx2P-jJs?si=2kaTn920tJcU5e1e",
+      time: 10,
+    },
+    {
+      name: "요즘 자주 듣는 노래 3",
+      url: "https://youtu.be/MSv7NbfbtU8?si=ZELF7xaQxmpapV4B",
+      time: 15,
+    },
+  ];
+
+  function musicPlaylist() {
+    if (!musicPlay) {
+      setMusicPlay(true);
     } else {
-      setLoveyou(false);
+      setMusicPlay(false);
     }
-  };
+  }
 
   const timeset = (e) => {
     if (!timerRunning) {
-      setTime(parseInt(e.target.value));
+      const selected = songs.find((song) => song.name === e.target.textContent);
+      setTime(selected.time);
+      setSelectedSong(selected);
     }
   };
 
@@ -29,38 +50,33 @@ const Timer = () => {
       setTimeout(() => {
         clearInterval(timer);
         setTimerRunning(false);
+        window.open(selectedSong.url, "_blank");
       }, time * 1000);
     }
   };
 
-  console.log(loveyou);
   return (
     <>
-      <div className={styles.goback}>
-        <h1 className={styles.love}>내 마음이 식기전에 연락줘</h1>
-        <button className={styles.openTimer} onClick={wantToSeeYou}>
-          연락올때까지 숨 참을게
+      <div className={styles.container}>
+        <h1 className={styles.playlist}>추천 플레이리스트</h1>
+        <button className={styles.openTimer} onClick={musicPlaylist}>
+          확인하기
         </button>
       </div>
-      <div className={`${loveyou ? styles.timer : styles.hiddenTimer}`}>
-        <div>우혁이가 죽을때까지 {time} 초..♥</div>
-        <button value={5} onClick={timeset}>
-          헉.. 얼른 연락줘야겠다
-        </button>
-        <button value={60} onClick={timeset}>
-          고민좀... 해봐야겠는걸...
-        </button>
-        <button value={9999} onClick={timeset}>
-          죽어버렷
-        </button>
-        <div>
-          <button className={styles.loveTimer} onClick={countDown}>
-            사랑의 카운트 다운 시작~!
+      <div className={`${musicPlay ? styles.timer : styles.hiddenTimer}`}>
+        <div>{time} 초 후에 유튜브가 재생됩니다~! ✨</div>
+        {songs.map((song) => (
+          <button className={styles.btn} key={song.name} onClick={timeset}>
+            {song.name}
           </button>
-        </div>
+        ))}
+        <button className={styles.timeBtn} onClick={countDown}>
+          재생하기 🎶
+        </button>
+        <br />
       </div>
     </>
   );
-};
+}
 
 export default Timer;
