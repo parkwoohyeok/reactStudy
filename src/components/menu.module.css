@@ -5,6 +5,10 @@
   display: flex;
 }
 
+.menuUrl:hover {
+  color: rgb(182, 143, 143);
+}
+
 .menuBar {
   display: flex;
   gap: 1rem;

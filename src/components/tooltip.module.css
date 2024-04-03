@@ -1,0 +1,16 @@
+.tooltipText {
+  font-size: 3rem;
+}
+
+.container {
+  margin: 5rem;
+}
+
+.tooltip {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  display: inline;
+  padding: 0.7rem;
+  border-radius: 10px;
+  position: relative;
+}

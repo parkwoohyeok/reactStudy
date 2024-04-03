@@ -1,0 +1,30 @@
+.title {
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: rgb(248, 206, 143);
+}
+
+.button {
+  border: none;
+  background-color: antiquewhite;
+  padding: 2rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: rgb(78, 81, 81);
+  font-weight: 800;
+}
+.button:hover {
+  background-color: rgb(255, 223, 180);
+}
+.timeOut {
+  font-size: 2rem;
+  color: brown;
+  font-weight: 800;
+  line-height: 5rem;
+}
+.timeLeft {
+  font-size: 2rem;
+  color: rgb(247, 160, 47);
+  margin-top: 1rem;
+}
