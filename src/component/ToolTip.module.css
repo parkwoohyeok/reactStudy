@@ -1,0 +1,42 @@
+.tooltip {
+  color: #fb4264;
+  font-size: 60px;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #f40a35;
+  background-color: #000;
+}
+
+.tooltipContainer {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.img {
+  width: 480px;
+  height: 720px;
+}
+
+.tooltip {
+  animation: tooltip 1s ease infinite;
+  -moz-animation: tooltip 1s ease infinite;
+  -webkit-animation: tooltip 1s ease infinite;
+}
+
+@keyframes tooltip {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
+      0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw #800e0b, 0 0 1.5vw #800e0b, 0 0 5vw #800e0b,
+      0 0 5vw #800e0b, 0 0 0.2vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914;
+  }
+}
