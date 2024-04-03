@@ -1,0 +1,17 @@
+.timer {
+  color: #b87373;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.time {
+  font-size: 10rem;
+}
+button {
+  background-color: #d29e9e;
+  color: #fff;
+  font-size: 3rem;
+  border: solid 2px #b87373;
+  padding: 1rem;
+}
