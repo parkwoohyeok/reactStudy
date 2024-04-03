@@ -1,0 +1,26 @@
+.menuUrl {
+  text-decoration: none;
+  color: rgb(114, 4, 4);
+  cursor: pointer;
+  display: flex;
+}
+
+.menuUrl:hover {
+  color: rgb(182, 143, 143);
+}
+
+.menuBar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  color: rgba(178, 80, 5, 0.562);
+  font-size: 2rem;
+}
